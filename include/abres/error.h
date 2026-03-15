@@ -163,4 +163,7 @@ ABRES_Err *abres__error_wrap_loc(ABRES_ErrCode errcode, const char *file, int li
 void abres_error_print(const ABRES_Err *error);
 void abres_error_free(ABRES_Err **error);
 
+#define ABRES_NewErr(errcode, fmt, ...) (abres__error_new_loc(errcode, __FILE__, __LINE__, fmt, ##__VA_ARGS__))
+#define ABRES_NewErrFrom(errcode, cause, fmt, ...) (abres__error_wrap_loc(errcode, __FILE__, __LINE__, cause, fmt, ##__VA_ARGS__))
+
 #endif
