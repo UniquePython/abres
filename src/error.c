@@ -67,7 +67,7 @@ void abres_error_print(const ABRES_Err *error)
         for (int i = 0; i < indents; i++)
             printf("\t");
 
-        printf("[%s:%d] %s\n", current->file, current->errcode, current->errmsg);
+        printf("[%s:%d] %s\n", current->file, current->line, current->errmsg);
 
         current = current->cause;
 

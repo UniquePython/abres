@@ -16,7 +16,7 @@
     (Result_##T) { .value = (val), .error = NULL }
 
 #define ERR(T, err) \
-    (Result_##T) { .value = {0}, .error = (err) }
+    (Result_##T) { .value = (T){0}, .error = (err) }
 
 #define IS_OK(err) ((err).error == NULL)
 
